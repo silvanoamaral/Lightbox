@@ -57,8 +57,8 @@ tokenPromise.then((data) => {
         <img src="${ imgProduct }" alt="${ nameProduct }" title="${ nameProduct }">
       </div>
       <h2 class="slideshow__slide-title">${ nameProduct }</h2>
-      <h3 class="slideshow__slide-sub"></h3>
-      <p class="slideshow__slide-warning"></p>
+      <h3 class="slideshow__slide-sub">Resolve a candidiase, e alivia os sintomas desde o primeiro uso</h3>
+      <p class="slideshow__slide-warning"><strong>Atenção:</strong> Após lavagem das mãos, puxe totalmente o êmbolo do aplicador. Coloque o comprimido vaginal no aplicador de forma que metade do comprimido fique fora do aplicador, com o lado arredondado para fora. Pressione ligeiramente com os dedos a ponta redonda do aplicador enquanto faz este procedimento.</p>
     </div>`;
 
     const listSeller = document.createElement('ul');
