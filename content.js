@@ -47,7 +47,7 @@ tokenPromise.then((data) => {
   }).then(result => {
     const itens = result.data;
     const nameProduct = itens.name;
-    const imgProduct = itens.images[0].urls.small;
+    const imgProduct = itens.images[0].urls.big;
 
     const slideshowSlide = document.createElement('div');
     slideshowSlide.className = 'slideshow__slide';
@@ -70,9 +70,9 @@ tokenPromise.then((data) => {
         seller.innerHTML = '<div class="seller__logo"><img src="' + iten.retailerLogo + '" /></div>' +
           '<div class="seller__details">' +
             '<strong>R$ ' + iten.price + '</strong>' +
-            '<p>Em estoque</p>' +
+            '<p>Em estoque <span>&#128504;</span></p>' +
           '</div>' +
-          '<a href="' + iten.url + '" class="seller__buy">Comprar</a>';
+          '<div class="seller__buy"><a href="' + iten.url + '">Comprar</a></div>';
         listSeller.appendChild(seller);
       }
     });
