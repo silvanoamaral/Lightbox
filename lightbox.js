@@ -1,6 +1,14 @@
 var slide = 'slideshow__slide';
 var slideIndex = 1;
 
+function detectmob() {
+    if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
 // Next/previous controls
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -26,15 +34,16 @@ function showSlides(n) {
     }
 
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
+        slides[i].classList.remove('active');
+        //slides[i].style.display = "none"; 
     }
 
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
 
-    slides[slideIndex-1].style.display = "flex"; 
-    dots[slideIndex-1].className += " active";
+    slides[slideIndex-1].classList += ' active';
+    dots[slideIndex-1].className += ' active';
 }
 
 //cria os bullets
@@ -47,7 +56,7 @@ function setSlideshowBullets(qntSlides) {
     }
 }
 
-function init() {    
+function init() {
     var qntSlides = document.querySelectorAll('.slideshow .slideshow__slide');
 
     if(qntSlides.length > 1) {
@@ -55,7 +64,7 @@ function init() {
         showSlides(slideIndex);       
 
         document.getElementsByClassName('slideshow__button')[0].style.display = 'block';
-        document.getElementsByClassName('slideshow__bullets')[0].style.display = 'block';
+        document.getElementsByClassName('slideshow__bullets')[0].classList += ' active';
     }
 }
 

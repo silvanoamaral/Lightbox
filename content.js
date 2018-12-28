@@ -57,22 +57,39 @@ const findSeller = (ean, data) => {
   });
 };
 
+function detectmob() {
+  if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function setSlides(result) {
   const itens = result.data;
   const nameProduct = itens.name;
   const imgProduct = itens.images[0].urls.big;
 
+  var warning = document.createElement('p');
+  warning.className = 'slideshow__slide-warning';
+  warning.innerHTML = '<strong>Atenção:</strong> Após lavagem das mãos, puxe totalmente o êmbolo do aplicador. Coloque o comprimido vaginal no aplicador de forma que metade do comprimido fique fora do aplicador, com o lado arredondado para fora. Pressione ligeiramente com os dedos a ponta redonda do aplicador enquanto faz este procedimento.';
+
   const slideshowSlide = document.createElement('div');
   slideshowSlide.className = 'slideshow__slide';
+
   slideshowSlide.innerHTML = `
   <div class="slideshow__product">
-    <div class="slideshow__slide-image">
+    <div class="slideshow__slide-image ${ detectmob()? 'desk': 'mob' } ">
       <img src="${ imgProduct }" alt="${ nameProduct }" title="${ nameProduct }">
     </div>
     <h2 class="slideshow__slide-title">${ nameProduct }</h2>
     <h3 class="slideshow__slide-sub">Resolve a candidiase, e alivia os sintomas desde o primeiro uso</h3>
-    <p class="slideshow__slide-warning"><strong>Atenção:</strong> Após lavagem das mãos, puxe totalmente o êmbolo do aplicador. Coloque o comprimido vaginal no aplicador de forma que metade do comprimido fique fora do aplicador, com o lado arredondado para fora. Pressione ligeiramente com os dedos a ponta redonda do aplicador enquanto faz este procedimento.</p>
+    <div class="slideshow__slide-image ${ detectmob()? 'mob': 'desk' } ">
+      <img src="${ imgProduct }" alt="${ nameProduct }" title="${ nameProduct }">
+    </div>
   </div>`;
+
+  slideshowSlide.querySelector('.slideshow__product').append(warning);
 
   const listSeller = document.createElement('ul');
   listSeller.className = 'list__seller';
@@ -85,12 +102,22 @@ function setSlides(result) {
           '<strong>R$ ' + iten.price + '</strong>' +
           '<p>Em estoque <span>&#128504;</span></p>' +
         '</div>' +
-        '<div class="seller__buy"><a href="' + iten.url + '">Comprar</a></div>';
+        '<div class="seller__buy">'+
+          '<a href="' + iten.url + '">Comprar</a>'+
+          '<p>Em estoque <span>&#128504;</span></p>'+
+        '</div>';
+
       listSeller.appendChild(seller);
     }
   });
 
-  slideshowSlide.appendChild(listSeller)
+  var encontreFarmacia = document.createElement('h4');
+  encontreFarmacia.className = 'slideshow__farm';
+  encontreFarmacia.innerHTML = 'Encontre nas Farmácias';
+
+  listSeller.prepend(encontreFarmacia);
+
+  slideshowSlide.appendChild(listSeller);
 
   document.getElementsByClassName('content')[0].append(slideshowSlide);
 }
