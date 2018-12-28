@@ -10,7 +10,7 @@
     max-width: 800px;
     background-color: #FFF;
     border-radius: 4px;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     margin-left: -355px;
@@ -50,6 +50,7 @@
 .slideshow__button .next:hover {
     background-color: #f1f1f1;
     color: black;
+    text-decoration: none;
 }
 
 /* Position the "next button" to the right */
@@ -68,6 +69,7 @@
 
 .slideshow__bullets.active {
     display: block;
+    background: transparent;
 }
 
 .slideshow__bullets span.dot {
@@ -127,10 +129,14 @@
 .slideshow h3 {    
     color: #EA899C;
     font-weight: 600;
+    font-size: 28px;
+    font-family: "Linotype Didot W01 Headline",Georgia,"Times New Roman",Times,serif;
 }
 
 .slideshow h3 {    
    font-weight: normal;
+   line-height: 23px;
+   font-size: 22px;
 }
 
 .slideshow .slideshow__slide {
@@ -139,6 +145,7 @@
 
 .slideshow .slideshow__slide.active {
     display: flex;
+    background: #fff;
 }
 
 .slideshow .slideshow__slide .slideshow__product {
@@ -146,12 +153,13 @@
     height: 625px;
     background-color: #ededed;
     padding: 60px 20px 50px 20px;
+    text-align: left;
 }
 
 .slideshow .slideshow__slide-image {
-    width: 185px;
+    width: 175px;
     margin: 0 auto;
-    padding-top: 30px;
+    padding: 30px 0 20px 0;
 }
 
 .slideshow .slideshow__slide-image img {
@@ -286,6 +294,7 @@ ul.list__seller .slideshow__farm {
         margin: 0px;
         top: 35px;
         left: 0;
+        position: absolute;
     }
 
     .slideshow .slideshow__container {
