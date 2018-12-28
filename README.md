@@ -1,10 +1,15 @@
 # Lightbox
 
 ## Project Structure
+
 ```
 ├── index.html
-├── content.js
-├── lightbox.js
-├── lightbox.css
+├── src
+│   ├── js
+│   │   └── lightbox.js
+│   │   └── content.js
+│   ├── css
+│       └── lightbox.css
+├── README.md
 
 ```
