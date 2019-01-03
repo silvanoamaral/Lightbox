@@ -391,10 +391,6 @@ ul.list__seller .slideshow__farm {
         display: none;
     }
 
-    .slideshow .slideshow__slide-warning {
-        display: none;
-    }
-
     .slideshow .slideshow__slide-image.mob {
         display: block;
     }
