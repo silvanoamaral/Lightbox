@@ -79,7 +79,7 @@ var App = {
             /*
                 Máscara Moeda com Expressão Regular
             */
-            var m = valor; //Exemplo 'R$ 3.942,49' ou 432,00;
+            var m = valor.toString(); //Exemplo 'R$ 3.942,49' ou 432,00;
             m=m.replace(/\D/g,""); //Remove tudo o que não é dígito
             m=m.replace(/(\d{2})$/,",$1"); //Coloca a virgula
             m=m.replace(/(\d+)(\d{3},\d{2})$/g,"$1.$2"); //Coloca o primeiro ponto
@@ -121,7 +121,7 @@ var App = {
                 const seller = document.createElement('li');
                 seller.innerHTML = '<div class="seller__logo"><img src="' + iten.retailerLogo + '" /></div>' +
                     '<div class="seller__details">' +
-                    '<strong>R$ ' + iten.price + '</strong>' +
+                    '<strong>R$ ' + App.events.mascaraMoeda(iten.price)  + '</strong>' +
                     '<p>Em estoque <span>&#128504;</span></p>' +
                     '</div>' +
                     '<div class="seller__buy">'+
