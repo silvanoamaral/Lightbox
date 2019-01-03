@@ -6,8 +6,7 @@
 ├── index.html
 ├── src
 │   ├── js
-│   │   └── lightbox.js
-│   │   └── content.js
+│   │   └── openLightbox.js
 │   ├── css
 │       └── lightbox.css
 ├── README.md
@@ -15,6 +14,5 @@
 ```
 
 * `index.html` file main
-* `src/js/lightbox.js` contém código para iniciar carousel
-* `src/js/content.js` contém código da requisição no endpoint e preenche o lightbox 
+* `src/js/openLightbox.js` contém código da requisição do endpoint, preenchendo e abre o lightbox
 * `src/css/lightbox.css` contém todo css

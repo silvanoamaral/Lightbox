@@ -5,24 +5,25 @@
         <link rel="stylesheet" href="src/css/lightbox.css">
     </head>
 <body>
+    <!-- Botão comprar apenax de exemplo -->
+    <a class="btn_comprar" data-ean="7891106001755,7891106003230,7891106001762">Comprar</a>
+
     <div class="bgFloater"></div>
     <div class="slideshow">
         <div class="slideshow__container">
             <span class="slideshow__close" title="Fechar">&Chi;</span>
+
             <div class="slideshow__button">
-                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                <a class="prev" data-prev="-1">&#10094;</a>
+                <a class="next" data-next="1">&#10095;</a>
             </div>
 
-            <div class="content">
-            </div>
+            <div class="content"></div>
 
-            <div class="slideshow__bullets">
-            </div>
+            <div class="slideshow__bullets"></div>
         </div>
     </div>
 
-    <script async="async" type="text/javascript" src="src/js/content.js"></script>
-    <script async="async" type="text/javascript" src="src/js/lightbox.js"></script>
+    <script async="async" type="text/javascript" src="src/js/openLightbox.js"></script>
 </body>
 </html> 

@@ -2,8 +2,26 @@
     box-sizing: border-box;
 }
 
+/* slideshow container */
+.bgFloater {
+    display: none;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    opacity: 0;
+
+    transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
 /* Slideshow */
 .slideshow {
+    display: none;
     font-family: "Avenir T_R W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
     width: 100%;
     padding: 0;
@@ -16,6 +34,21 @@
     margin-left: -355px;
     margin-top: -290px;
     z-index: 5;
+    opacity: 0;
+
+    transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fade__lightbox .slideshow {
+    display: block;
+    opacity: 1;
+}
+
+.fade__lightbox .bgFloater {
+    display: block;
+    opacity: 0.5;
 }
 
 /* Next & previous buttons */
@@ -86,18 +119,6 @@
 .slideshow__bullets span.dot.active,
 .slideshow__bullets span.dot:hover {
     background-color: #ea899c;
-}
-
-/* slideshow container */
-.bgFloater {
-    background-color: #000;
-    opacity: 0.5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 4;
 }
 
 .slideshow__container {
@@ -381,4 +402,20 @@ ul.list__seller .slideshow__farm {
     .slideshow .slideshow__slide-image.desk {
         display: none;
     }
+}
+
+/* 
+Css para botão comprar fake, apenas para abrir Lightbox
+*/
+a.btn_comprar {
+    display: block;
+    height: 40px;
+    width: 200px;
+    background-color: #EA899C;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 50px;
 }
