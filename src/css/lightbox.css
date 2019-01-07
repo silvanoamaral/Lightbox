@@ -1,9 +1,5 @@
-* {
-    box-sizing: border-box;
-}
-
 /* slideshow container */
-.bgFloater {
+.bg_floater {
     display: none;
     background-color: #000;
     position: fixed;
@@ -32,7 +28,7 @@
     top: 50%;
     left: 50%;
     margin-left: -355px;
-    margin-top: -290px;
+    margin-top: -277px;
     z-index: 5;
     opacity: 0;
 
@@ -46,9 +42,9 @@
     opacity: 1;
 }
 
-.fade__lightbox .bgFloater {
+.fade__lightbox .bg_floater {
     display: block;
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 /* Next & previous buttons */
@@ -123,7 +119,6 @@
 
 .slideshow__container {
     width: 100%;
-    height: 625px;
     background: #fff;
     margin: 0 auto;
     padding: 0;
@@ -171,7 +166,7 @@
 
 .slideshow .slideshow__slide .slideshow__product {
     max-width: 45%;
-    height: 625px;
+    height: 560px;
     background-color: #ededed;
     padding: 60px 20px 50px 20px;
     text-align: left;
@@ -207,7 +202,7 @@ ul.list__seller {
     padding: 0px 30px;
     margin: 0;
     list-style: none;
-    max-height: 580px;
+    max-height: 560px;
     overflow: hidden;
     overflow-y: scroll;
 }

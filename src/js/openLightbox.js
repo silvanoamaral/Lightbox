@@ -1,12 +1,55 @@
 var App = {
+    data_ean: '7891106001755,7891106003230,7891106001762',
     slideClass: 'slideshow__slide',
     slideIndex: 1,
     passou: true,
     init: function() {
         try {
-            App.handlers.init();          
+            App.handlers.setHtmlPage();
+            App.handlers.init();        
         }catch (err) {
             console.error(err.message);
+        }
+    },
+    setHtmlPage: {
+        init: function() {
+            try {
+                App.setHtmlPage.btnBuy();
+                App.setHtmlPage.lightBox();
+            }catch (err) {
+                console.error(err.message);
+            }
+        },
+        btnBuy: function() {
+            var btnBuy = document.createElement('a');
+            btnBuy.classList.add('btn_comprar');
+            btnBuy.setAttribute('data-ean', App.data_ean);
+            btnBuy.innerHTML = 'Comprar';
+
+            //Adiciona o botão comprar no no boby, mais pode ser qualquer lugar do site
+            document.getElementsByTagName('body')[0].append(btnBuy);
+        },
+        lightBox: function() {
+            var lightBox = document.createElement('div');
+            lightBox.classList.add('lightBox_intellibrand');
+            lightBox.innerHTML = '<div class="bgFloater"></div>'+
+            '<div class="slideshow">'+
+                '<div class="slideshow__container">'+
+                    '<span class="slideshow__close" title="Fechar">&Chi;</span>'+
+
+                    '<div class="slideshow__button">'+
+                        '<a class="prev" data-prev="-1">&#10094;</a>'+
+                        '<a class="next" data-next="1">&#10095;</a>'+
+                    '</div>'+
+
+                    '<div class="content"></div>'+
+
+                    '<div class="slideshow__bullets"></div>'+
+                '</div>'+
+            '</div>';
+
+            //Adiciona o lightBox no body
+            document.getElementsByTagName('body')[0].append(lightBox);
         }
     },
     events: {
