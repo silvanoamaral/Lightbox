@@ -2,6 +2,7 @@ var App = {
     data_ean: '7891106001755,7891106003230,7891106001762',
     slideClass: 'slideshow__slide',
     slideIndex: 1,
+    classOpenLightbox: '<colocar aqui o nome da classe do botão>',
     passou: true,
     init: function() {
         try {
@@ -14,7 +15,7 @@ var App = {
     setHtmlPage: {
         init: function() {
             try {
-                App.setHtmlPage.btnBuy();
+                //App.setHtmlPage.btnBuy();
                 App.setHtmlPage.lightBox();
             }catch (err) {
                 console.error(err.message);
@@ -330,7 +331,7 @@ var App = {
         },
         openLightBox: function() {
             /* event clique para capturar o ean do botão comprar e abrir o Lightbox */
-            document.getElementsByClassName('btn_comprar')[0].addEventListener('click', function(event) {
+            document.getElementsByClassName(App.classOpenLightbox)[0].addEventListener('click', function(event) {
                 objEan = event.target.getAttribute('data-ean').split(',');
                 App.helpers.lightBox(objEan);
             });
