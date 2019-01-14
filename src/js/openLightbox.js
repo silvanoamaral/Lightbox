@@ -5,7 +5,7 @@ var App = {
     passou: true,
     init: function() {
         try {
-            App.handlers.setHtmlPage();
+            App.setHtmlPage.init();
             App.handlers.init();        
         }catch (err) {
             console.error(err.message);
